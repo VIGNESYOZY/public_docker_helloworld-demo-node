@@ -1,4 +1,7 @@
 version: '0.2'
+env:
+  variables:
+    DOCKER_BUILDKIT: 1
 phases:
   pre_build:
     commands:
@@ -7,7 +10,7 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - echo ID_0LevBmvC
+      - echo ID_tNg24Boh
       - 'docker build -t $IMAGE_NAME:$IMAGE_TAG -f Dockerfile .'
       - 'docker tag $IMAGE_NAME:$IMAGE_TAG $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG'
   post_build:
